@@ -9,6 +9,7 @@ import SwiftUI
 @preconcurrency import WebKit
 
 struct WebView: UIViewRepresentable {
+    @Binding var isLoading: Bool
     @Binding var isLoggedIn: Bool
     let url: URL
     
@@ -21,13 +22,13 @@ struct WebView: UIViewRepresentable {
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
         webView.navigationDelegate = context.coordinator
+        webView.scrollView.isScrollEnabled = true
         return webView
     }
     
     
     func updateUIView(_ webView: WKWebView, context: Context) {
         let request = URLRequest(url: url)
-        webView.scrollView.isScrollEnabled = true
         webView.load(request)
     }
     
@@ -42,11 +43,19 @@ struct WebView: UIViewRepresentable {
         
         func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
             print("halaman sedang dimuat")
+            
+            DispatchQueue.main.async {
+                self.parent.isLoading = true
+            }
         }
         
         
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
             print("halaman selesai dimuat")
+            
+            DispatchQueue.main.async {
+                self.parent.isLoading = false
+            }
             
             guard let currentURL = webView.url else {
                 print("URL not found")
