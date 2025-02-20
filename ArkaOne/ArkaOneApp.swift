@@ -1,6 +1,6 @@
 //
-//  ArkaGroupSwiftUIApp.swift
-//  ArkaGroupSwiftUI
+//  ArkaOneApp.swift
+//  ArkaOne
 //
 //  Created by tandyys on 19/02/25.
 //

@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  ArkaGroupSwiftUI
+//  ArkaOne
 //
 //  Created by tandyys on 19/02/25.
 //
@@ -23,7 +23,7 @@ struct ContentView: View {
                 }
             }
             if(isLoggedIn) {
-                Text("Muncul button absennya...")
+                Text("Absence Button Showed")
                     .font(.system(size: 30, weight: .bold))
                     .foregroundStyle(.green)
             }
