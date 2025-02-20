@@ -23,6 +23,7 @@ struct WebView: UIViewRepresentable {
         let webView = WKWebView()
         webView.navigationDelegate = context.coordinator
         webView.scrollView.isScrollEnabled = true
+        
         return webView
     }
     
@@ -35,6 +36,7 @@ struct WebView: UIViewRepresentable {
     
     class Coordinator: NSObject, WKNavigationDelegate {
         var parent: WebView
+        
         
         init(_ parent: WebView) {
             self.parent = parent

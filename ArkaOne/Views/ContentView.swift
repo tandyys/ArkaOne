@@ -12,6 +12,7 @@ struct ContentView: View {
     @State var isLoggedIn = false
     private let url = URL(string: "https://corporate.arkagroup.id")
     
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -30,7 +31,7 @@ struct ContentView: View {
                 
                 if(isLoggedIn) {
                     HStack {
-                        createNavigationLinkButton(destination: DummyView(), imageName: "ClockPlus", buttonText: "Masuk", textColor: .white, buttonWidth: 166, buttonHeight: 40, buttonColor: Color(red: 168/255, green: 122/255, blue: 71/255))
+                        createNavigationLinkButton(destination: MapView(), imageName: "ClockPlus", buttonText: "Masuk", textColor: .white, buttonWidth: 166, buttonHeight: 40, buttonColor: Color(red: 168/255, green: 122/255, blue: 71/255))
 
                         createNavigationLinkButton(destination: DummyView(), imageName: "ClockCheck", buttonText: "Pulang", textColor: Color(red: 168/255, green: 122/255, blue: 71/255), buttonWidth: 166, buttonHeight: 40, buttonColor: .white)
                     }
