@@ -16,3 +16,7 @@ struct ArkaOneApp: App {
         }
     }
 }
+
+#Preview {
+
+}
